@@ -1,7 +1,7 @@
 {
 	"name":"АСУ РСО",
 	"short_name":"АСУ РСО",
-	"start_url":"https://asurso.ru",
+	"start_url":"redir.html",
 	"display":"standalone",
 	"background_color":"#5900b3",
 	"theme_color":"black",
