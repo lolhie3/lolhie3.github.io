@@ -10,22 +10,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space Grotesk">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <title></title>
-    <script>
-    function copyton() {
-  // Get the text field
-  var copyText = EQDWcvBqnw_4FhsMYZAW3f6TeGpcluOLmaQHHS-WWS8HIy_K;
-
-  // Select the text field
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); // For mobile devices
-
-   // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
-
-  // Alert the copied text
-  alert("Copied the text: " + copyText.value);
-}
-</script>
     <style>
     body {
       background-color: #111;
@@ -34,44 +18,131 @@
       color: #fff;
       text-align: center;
       font-family: 'Space Grotesk';
+      transition: transform .2s;
       font-size: 20px;
+      animation-duration: 0.01s;
+       animation-name: textflicker;
+       animation-iteration-count: infinite;
+       animation-direction: alternate;
       }
+     p.logo:hover {
+      transform: scale(0.9);
+      }
+    @keyframes textflicker {
+  from {
+    text-shadow: 1px 0 0 #ea36af, -2px 0 0 #8fff86;
+  }
+  to {
+    text-shadow: 1px 0.5px 4px #ea36af, -1px -0.5px 4px #8fff86;
+  }
+}
     p.text {
       color: #fff;
       text-align: center;
       font-family: 'Roboto';
       font-size: 16px;
+      transition: transform .2s;
       }
+     a:hover {
+      transform: scale(0.95);
+      } 
+    p.head {
+      color: #fff;
+      text-align: center;
+      font-family: 'Space Grotesk';
+      font-size: 16px;
+      }
+    p.center {
+      text-align: center;
+      }  
+    p.line {
+      color: #333;
+      text-align: center;
+      font-family: 'Roboto';
+      font-size: 16px;
+      }
+.tonh:hover span {
+  display: none
+}
+
+.tonh:hover:before {
+  content: "EQDWcvBqnw_4FhsMYZAW3f6TeGpcluOLmaQHHS-WWS8HIy_K"
+}
     a {
       color: #aaa;
       text-align: center;
       font-family: 'Roboto';
       font-size: 16px;
+      transition: .3s;
       }
-    a.hover {
-      color: #fff;
+    a:hover {
+      color: #bbb;
       text-align: center;
       font-family: 'Roboto';
       font-size: 16px;
       }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
     </style>
+<script>
+var i = 0;
+var txt = 'mario68k'; /* The text */
+var speed = 50; /* The speed/duration of the effect in milliseconds */
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
     
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
   </head>
-  <body>
-  <p class="logo">mario68k</p>
-  <p class="text">Contact me:</p>
+  <body onload=typeWriter()>
+  <p class="logo" id="demo"></p>
+  <p class="head">Projects:</p>
+  <p class="text"> 
+  <a href="https://github.com/lolhie3">Github</a>
+  </p>
+  <p class="center"><hr style="height:1px;width:120px;border-width:0;color:gray;background-color:#222;"></p>
+  <p class="head">Contact me:</p>
   <p class="text"> 
   <a href="tg://domain?resolve=y9cheburator">Telegram</a>
-  <a href="https://github.com/lolhie3">Github</a>
-  <a href="mailto:rkalinin959@gmail.com">E-mail</a>
   <a href="https://matrix.to/#/@mario68k:matrix.org">matrix.org</a>
   </p>
-  <p class="text">Donate:</p>
   <p class="text"> 
-  <a href="https://www.donationalerts.com/r/n0vice">DonationAlerts</a>
+  <a href="https://steamcommunity.com/id/n0vice_cs">Steam</a>
+  <a href="https://discord.com/users/904675087779762187">Discord</a>
+  </p>
+  <p class="center"><hr style="height:1px;width:120px;border-width:0;color:gray;background-color:#222;"></p>
+  <p class="head">Donate with crypto:</p>
+  <p class="text"> 
+  <a>Tonkeeper: EQDWcvBqnw_4FhsMYZAW3f6TeGpcluOLmaQHHS-WWS8HIy_K</a>
+  <br>
+  <br>
+  <a>TON Space: EQDozDPVglCDGH3qxVtCGxco8XdD_cCymDHfv8Sfawt5ndPp</a>
+  </p>
+  <p class="text" style="color: #222">
+  made by R.K. 2023
   </p>
   </body>
 </html>
