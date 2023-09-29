@@ -1,0 +1,23 @@
+<head>
+  <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
+<script>
+    // fluidPlayer method is global when CDN distribution is used.
+    var player = fluidPlayer('example-player');
+</script>
+</head>
+<body>
+  <video id="example-player">
+    <source src="https://lolhie3.github.io/squeaker/cat.mp4" type="video/mp4"/>
+</video>
+<script type="text/javascript">
+var player = fluidPlayer(
+   'my-video',
+    {
+        layoutControls: {
+            autoPlay: true,
+            preload:  true
+        }
+    }
+);
+</script>
+</body>
