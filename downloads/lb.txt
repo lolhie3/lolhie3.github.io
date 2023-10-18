@@ -2,3 +2,4 @@ lolhie3 test LOLOLOL
 This is a test of Listbrowser =)
 
 < BACK
+EOF
