@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+   <title>WAVClicker Mini-app</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+  <embed src="https://lolhie3.github.io/clickgame/music.ogg" loop="true" autostart="true" width="2" height="0">
+   <style>
+      body{
+         color: var(--tg-theme-text-color);
+         background: var(--tg-theme-bg-color);
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         font-size: 18px;
+		 font-family: 'Inter';
+      }
+
+      .hint{
+         color: var(--tg-theme-hint-color);
+      }
+
+      .link{
+         color: var(--tg-theme-link-color);
+      }
+
+      #sendDataButton {
+         background: var(--tg-theme-button-color);
+         color: var(--tg-theme-button-text-color);
+         border: none;
+         font-size: 18px;
+         border-radius: 10px; /* Для закругления углов */
+         width: 250px; /* Задайте ширину по вашему усмотрению */
+         height: 50px; /* Задайте высоту по вашему усмотрению */
+         position: fixed; /* Фиксированная позиция */
+         bottom: 20px; /* Отступ от нижней части сайта */
+         left: 50%; /* Горизонтальное выравнивание по центру */
+         transform: translateX(-50%); /* Центрирование по горизонтали */
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-weight: bold;
+      }
+
+      .btn {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+      
+      .btn span {
+        position: absolute;
+        height: 12px;
+        width: 12px;
+        border-radius: 100%;
+        background: #FFFFFF;
+        -webkit-animation: buttonWave 2s;
+                animation: buttonWave 2s;
+      }
+      
+      @keyframes buttonWave {
+        0% {
+          opacity: 0.2;
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          -webkit-transform: scale(30);
+                  transform: scale(30);
+        }
+      }
+      
+      /* Опционально */
+      .btn-default {
+        outline: none;
+        letter-spacing: 0.5px;
+        border: none;
+        padding: 20px 30px;
+        color: #fff;
+        background-color: var(--tg-theme-text-color);
+        text-align: center;
+        border-radius: 30px; /* Задаем закругленные углы для круглой кнопки; EDIT: кнопка теперь квадратная */
+        width: 250px; /* Задайте ширину по вашему усмотрению */
+        height: 250px; /* Задайте высоту по вашему усмотрению */
+        position: fixed; /* Фиксированная позиция */
+        top: 50%; /* Размещаем по вертикали по центру */
+        left: 50%; /* Размещаем по горизонтали по центру */
+        transform: translate(-50%, -50%); /* Центрируем по обоим осям */
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+         font-size: 24px;
+         font-weight: bold;
+      }
+
+      
+      .btn-default:hover {
+        background-color: #339e71;
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+      }
+
+
+
+      #usercard{
+         text-align: center;
+      }
+   </style>
+</head>
+
+<body>
+   <div id="usercard"> <!--Карта профиля, человека, который к нам обратился-->
+   </div>
+      <!-- Кнопка для кликов -->
+      <button id="clickButton" class="btn btn-default" data-button-background="#FFFFFF">Клик</button>
+
+      <!-- Кнопка для отправки данных в бота -->
+      <button id="sendDataButton" class="button">Завершить</button>
+   </body>
+   
+   <script>
+      let tg = window.Telegram.WebApp;
+      tg.expand()
+      let clickCount = 0;
+   
+      // Обработчик нажатия кнопки "Click to Count"
+
+       const buttons = document.getElementsByClassName('btn');
+       for (let i = 0; i < buttons.length; i++) {
+           buttons[i].addEventListener('click', function (e) {
+               clickCount++;
+               clickButton.innerText = `${clickCount} WAV`;
+               const wave = document.createElement('span'),
+                   waveOffset = this.getBoundingClientRect();
+               const waveY = e.pageY - waveOffset.top,
+                   waveX = e.pageX - waveOffset.left;
+               wave.style.top = waveY + 'px',
+                   wave.style.left = waveX + 'px',
+                   wave.style.background = this.getAttribute('data-button-background');
+               this.appendChild(wave);
+   
+               setTimeout(function () {
+                   wave.parentNode.removeChild(wave);
+               }, 1500);
+           });
+       }
+   
+      // Обработчик нажатия кнопки "Send Data to Bot"
+      let sendDataButton = document.getElementById("sendDataButton");
+      sendDataButton.addEventListener('click', function(){
+         // Отправляем данные о количестве кликов в бота
+         tg.sendData(`${clickCount}`);
+      });
+   
+   let usercard = document.getElementById("usercard"); //получаем блок usercard 
+
+   let profName = document.createElement('p'); //создаем параграф
+   profName.innerText = `Приветствуем, ${tg.initDataUnsafe.user.first_name}`;
+   //выдем имя, "фамилию", через тире username и код языка
+   usercard.appendChild(profName); //добавляем 
+
+   let userid = document.createElement('p'); //создаем еще параграф 
+   userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
+   usercard.appendChild(userid); //добавляем
+
+
+   //работает только в attachment menu
+   // let pic = document.createElement('img'); //создаем img
+   // pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
+   // usercard.appendChild(pic); //добавляем элемент в карточку 
+</script>
+</html>
