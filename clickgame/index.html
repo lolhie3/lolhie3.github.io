@@ -7,7 +7,6 @@
    <title>WAVClicker Mini-app</title>
    <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-  <embed src="https://lolhie3.github.io/clickgame/music.ogg" loop="true" autostart="true" width="2" height="0">
    <style>
       body{
          color: var(--tg-theme-text-color);
@@ -50,7 +49,7 @@
         overflow: hidden;
         z-index: 1;
       }
-      
+
       .btn span {
         position: absolute;
         height: 12px;
@@ -80,8 +79,8 @@
         letter-spacing: 0.5px;
         border: none;
         padding: 20px 30px;
-        color: #fff;
-        background-color: var(--tg-theme-text-color);
+        color: var(--tg-theme-button-text-color);
+        background-color: var(--tg-theme-button-color);
         text-align: center;
         border-radius: 30px; /* Задаем закругленные углы для круглой кнопки; EDIT: кнопка теперь квадратная */
         width: 250px; /* Задайте ширину по вашему усмотрению */
@@ -160,9 +159,9 @@
    //выдем имя, "фамилию", через тире username и код языка
    usercard.appendChild(profName); //добавляем 
 
-   let userid = document.createElement('p'); //создаем еще параграф 
-   userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
-   usercard.appendChild(userid); //добавляем
+  // let userid = document.createElement('p'); //создаем еще параграф
+  // userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
+  // usercard.appendChild(userid); //добавляем
 
 
    //работает только в attachment menu
