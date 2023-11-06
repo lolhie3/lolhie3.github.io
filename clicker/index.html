@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .button {
+            display: inline-block;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clicker Game</h1>
+    <p>Click the button to earn points!</p>
+    <button class="button">Click me!</button>
+    <script>
+        let score = 0;
+        
+        document.querySelector('.button').addEventListener('click', function() {
+            score++;
+            alert(`You have earned ${score} points!`);
+        });
+    </script>
+</body>
+</html>
