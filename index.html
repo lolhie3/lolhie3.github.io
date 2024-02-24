@@ -1,159 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta charset="utf-8">
-    <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
-    <meta name="dcterms.created" content="Ñð, 27 ñåí 2023 12:32:35 GMT">
-    <meta name="description" content="A website with my projects">
-    <meta name="keywords" content="personal">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space Grotesk">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <title></title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <title>@darkywolf17</title>
     <style>
-    body {
-      background-color: #111;
-    }
-    p.logo {
-      color: #fff;
-      text-align: center;
-      font-family: 'Space Grotesk';
-      transition: transform .2s;
-      font-size: 20px;
-      animation-duration: 0.01s;
-       animation-name: textflicker;
-       animation-iteration-count: infinite;
-       animation-direction: alternate;
-      }
-     p.logo:hover {
-      transform: scale(0.9);
-      }
-    @keyframes textflicker {
-  from {
-    text-shadow: 1px 0 0 #ea36af, -2px 0 0 #8fff86;
-  }
-  to {
-    text-shadow: 1px 0.5px 4px #ea36af, -1px -0.5px 4px #8fff86;
-  }
-}
-    p.text {
-      color: #fff;
-      text-align: center;
-      font-family: 'Roboto';
-      font-size: 16px;
-      transition: transform .2s;
-      }
-     a:hover {
-      transform: scale(0.95);
-      } 
-    p.head {
-      color: #fff;
-      text-align: center;
-      font-family: 'Space Grotesk';
-      font-size: 16px;
-      }
-    p.center {
-      text-align: center;
-      }  
-    p.line {
-      color: #333;
-      text-align: center;
-      font-family: 'Roboto';
-      font-size: 16px;
-      }
-.tonh:hover span {
-  display: none
-}
-
-.tonh:hover:before {
-  content: "EQDWcvBqnw_4FhsMYZAW3f6TeGpcluOLmaQHHS-WWS8HIy_K"
-}
-    a {
-      color: #aaa;
-      text-align: center;
-      font-family: 'Roboto';
-      font-size: 16px;
-      transition: .3s;
-      }
-    a:hover {
-      color: #bbb;
-      text-align: center;
-      font-family: 'Roboto';
-      font-size: 16px;
-      }
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+        body {
+            font-family: Inter;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .intro {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .intro h1 {
+            font-size: 36px;
+        }
+        .intro p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .cta {
+            margin-top: 40px;
+            text-align: center;
+        }
+		.cta p {
+            font-size: 16px;
+        }
+        .cta a {
+            display: inline-block;
+            background-color: #555;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .cta a:hover {
+            background-color: #777;
+        }
+		.list-thing {
+			background: #888;
+			border-radius: 15px;
+			color: white;
+		}
+		.list-thing a {
+			color: white;
+			text-decoration: none;
+		}
     </style>
-<script>
-var i = 0;
-var txt = 'mario68k'; /* The text */
-var speed = 50; /* The speed/duration of the effect in milliseconds */
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-</script>
-    
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
-  </head>
-  <body onload=typeWriter()>
-  <p class="logo" id="demo"></p>
-  <p class="head">Projects:</p>
-  <p class="text"> 
-  <a href="https://github.com/lolhie3">Github</a>
-  </p>
-  <p class="center"><hr style="height:1px;width:120px;border-width:0;color:gray;background-color:#222;"></p>
-  <p class="head">Contact me:</p>
-  <p class="text"> 
-  <a href="tg://domain?resolve=y9cheburator">Telegram</a>
-  <a href="https://matrix.to/#/@mario68k:matrix.org">matrix.org</a>
-  </p>
-  <p class="text"> 
-  <a href="https://steamcommunity.com/id/n0vice_cs">Steam</a>
-  <a href="https://discord.com/users/904675087779762187">Discord</a>
-  </p>
-  <p class="center"><hr style="height:1px;width:120px;border-width:0;color:gray;background-color:#222;"></p>
-  <p class="head">Donate with crypto:</p>
-  <p class="text"> 
-  <a>Tonkeeper: EQDWcvBqnw_4FhsMYZAW3f6TeGpcluOLmaQHHS-WWS8HIy_K</a>
-  <br>
-  <br>
-  <a>TON Space: EQDozDPVglCDGH3qxVtCGxco8XdD_cCymDHfv8Sfawt5ndPp</a>
-  </p>
-  <p class="text" style="color: #222">
-  made by R.K. 2023
-  </p>
-  </body>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>@darkywolf17</h1>
+			<p>aka DRONECVLT</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="intro">
+            <h1>About me</h1>
+            <p>
+                I am programmer, musician and just a good guy. <br>
+				Interests:
+				<div class="list-thing">
+					<br>
+					<p>Cryptocurrencies, blockchains</p>
+					<p>TON (The Open Network | <a href="https://ton.org">ton.org</a>)</p>
+					<p>Animations, webseries (mostly <a href="https://glitchprod.com">glitchprod.com</a>), etc.</p>
+					<p>Telegram bot & miniapp development</p>
+					<br>
+				</div>
+            </p>
+        </div>
+        <div class="cta">
+            <a href="https://darkywolf17.t.me">Telegram</a>
+			<a href="https://getgems.io/darkywolf17">Getgems</a>
+			<a href="https://ton.app/pay/transfer/darkywolf17.ton?amount=0&text=Donate">Donate in TON</a>
+			<a href="https://github.com/lolhie3/">Github</a>
+			<p>darkywolf17.t.me</p>
+        </div>
+    </div>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-<!-- Anyone hears me? Where am I? Who am I? U09NRU9ORSBIRUxQIE1FIQ== >
